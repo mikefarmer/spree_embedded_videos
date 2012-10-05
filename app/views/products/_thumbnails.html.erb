@@ -1,9 +1,9 @@
-<%= render :partial => 'thumbnail_items', :locals => {:list_id => 'product-thumbnails', :images => @product.images, :videos => @product.videos } %>
+<%= render :partial => '/products/thumbnail_items', :locals => {:list_id => 'product-thumbnails', :images => @product.images, :videos => @product.videos } %>
 
 <% if @product.has_variants? %>
   <% @variants.each do |v| %>
     <% if v.available? %>
-      <%= render :partial => 'thumbnail_items', :locals => {:list_id => "variant-thumbnails-#{v.id}", :hidden => true, :images => v.images, :videos => v.videos } %>
+      <%= render :partial => '/products/thumbnail_items', :locals => {:list_id => "variant-thumbnails-#{v.id}", :hidden => true, :images => v.images, :videos => v.videos } %>
     <% end %>
   <% end %>
 <% end %>
